@@ -8,5 +8,5 @@ fi;
 CLASSNAME=$(echo $1 | cut -f 1 -d '.')
 
 rm *.class &> /dev/null;
-javac --enable-preview --release 17 -cp lib/tester.jar *.java &&
-java --enable-preview -Djava.security.manager=disallow -classpath lib/tester.jar:. tester.Main $CLASSNAME
+javac -cp lib/tester.jar *.java &&
+java -Djava.security.manager=disallow -classpath lib/tester.jar:. tester.Main $CLASSNAME
